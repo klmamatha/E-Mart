@@ -8,7 +8,7 @@ import { useCart } from "../context/CartContext";
 const WatchSingle = () => {
   const { id } = useParams();
 
-  const {addToCart, cartItems} = useCart()
+  const { addToCart, cartItems } = useCart()
 
   const product = watchData.find((item) => item.id === id);
 
@@ -32,7 +32,7 @@ const WatchSingle = () => {
           <div className="ind-desc space">
             <p>{product.description}</p>
           </div>
-          <button onClick={()=>addToCart(product)}>Add to Cart</button>
+          <button onClick={() => addToCart(product)}>Add to Cart</button>
         </div>
       </div>
     </>

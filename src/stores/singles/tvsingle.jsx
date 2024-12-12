@@ -1,16 +1,17 @@
 import React from "react";
-import { booksData } from "../data/books";
+import { tvData } from "../data/tv";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
+
 import { useCart } from "../context/CartContext";
 
-const BooksSingle = () => {
+const TvSingle = () => {
     const { id } = useParams();
 
     const { addToCart, cartItems } = useCart()
 
-    const product = booksData.find((item) => item.id === id);
+    const product = tvData.find((item) => item.id === id);
 
     return (
         <>
@@ -21,10 +22,10 @@ const BooksSingle = () => {
                 </div>
                 <div className="ind-details space">
                     <div className="ind-company">
-                        <h2>{product.title}</h2>
+                        <h2>{product.company}</h2>
                     </div>
                     <div className="ind-model space">
-                        <h3>{product.author}</h3>
+                        <h3>{product.model}</h3>
                     </div>
                     <div className="ind-price space">
                         <h2>{product.price}</h2>
@@ -39,4 +40,4 @@ const BooksSingle = () => {
     );
 };
 
-export default BooksSingle;
+export default TvSingle;
